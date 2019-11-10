@@ -28,6 +28,10 @@
 */
 
 // Code Here 
+function first (arr, cbFunction){
+  cbFunction(arr[0]);
+}
+
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,6 +52,10 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(arr, cbFunction){
+  cbFunction(arr[arr.length-1]);
+}
+
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +74,10 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1, num2, cbFunMulti){
+  cbFunMulti(num1 * num2);
+}
+
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +97,11 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+function contains(array, name, cbFunction) {
+  cbFunction(array === name);
+  cbFunction(array != name)
+}
+
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -105,7 +122,28 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
+// var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
 //Code Here
+function uniq( arr, callBackFn ) {
+  console.log('proplem5')
+  let removeArrDuplicates = [];
+  for ( let i = 0; i < arr.length; i++ ) {
+    if (removeArrDuplicates.indexOf(arr[i]) === -1) {
+      arr.push(arr[i]);
+    } 
+  }
+    // arr.indexOf()
+
+    
+    //if any item exists in removeArrDuplicates
+    //then we DON't want to add it to removeArrDuplicates
+    //if item doesn't exist in removeArrDuplicates
+    //then we DO want to add it
+  }
+  
+let arr1 = [1,2,3,4,5]
+let arr2 = arr[1]
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -122,7 +160,15 @@ uniq(names, function(uniqArr){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here 
+var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+function each(arr, cb6){
+  for ( let i = 0; i < arr.length; i++ ){
+    cb6(arr[i], i ) //the first time through the loop, cb6(arr[i]) is the item, or in this case tylyer
+  
+  }  
+}
+
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,6 +186,18 @@ each(names, function(item, indice){
 */
 
 // Code here
+
+function getUserById(users, id, callBack7){
+  for ( let i = 0; i < users.length; i++ ){
+    if( users[i].id === id ){
+      callBack7(users[i]);
+    }
+  }
+}
+
+
+
+
 
 // Do not edit the code below.
 var users = [
